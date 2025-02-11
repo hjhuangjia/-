@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<TITLE>修改怪物颜色[!]</TITLE>
+</HEAD>
+<BODY>
+<P><FONT size=2><FONT 
+color=#0000ff><STRONG>功能：</STRONG></FONT><BR>
+&nbsp;&nbsp;&nbsp; <FONT 
+size=2>修改怪物身体颜色.</FONT></FONT></P>
+<P><FONT size=2><STRONG><FONT 
+color=#0000ff>说明：</FONT>SetMonColor 地图名 怪物名 颜色(1~255) 时间(秒) 类型（0、1） 时间设置0则为不计算有效时间永久有效</STRONG></FONT></P>
+<P>示列：<br>
+
+<P>[@SetMonColor]<br>
+#IF<br>
+CheckMapSameMonCount D2083 火龙教主 > 0<br>
+#ACT<br>
+SetMonColor D2083 火龙教主 151 0 1<br>
+SendMsg 5 D2083地图的火龙教主已经修改为七彩变色！<br>
+
+<P>[@SetMonColor1]<br>
+#IF<br>
+CheckMapSameMonCount D2083 火龙教主 > 0<br>
+#ACT<br>
+SetMonColor D2083 火龙教主 151 0 0<br>
+SendMsg 5 D2083地图的火龙教主已经修改为黄色！</p>
+<br><br><br><br><br>
+
+
+;---------------------------------------------------<br><br>
+请尽量不要在刷怪触发中使用怪物身体改色，特别是刷怪数量很多时触发<br>
+因为刷怪中写SetMonColor，该命令是对地图中很大一块区域进行的怪物进行操作，每刷一个怪就在遍历地图很大一块区域，效率低<br>
+如果需要可以考虑使用M.SetBodyColor<br><br>
+
+
+
+
+
+<B>注：如内挂设置BOSS身体变色则以内挂设置为准</B>
+</P>
+</BODY>
+</HTML>
